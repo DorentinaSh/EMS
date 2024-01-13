@@ -6,6 +6,7 @@
     <projectFile profileName="https">EMS/EMS.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
+<<<<<<< Updated upstream
     <list default="true" id="5552a805-bfba-4566-b367-a7d0f48c9f82" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/EMS/DAL/Interfaces/IEmsContext.cs" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/EMS/Migrations/20240113012958_InitialMigration.Designer.cs" afterDir="false" />
@@ -15,6 +16,48 @@
       <change beforePath="$PROJECT_DIR$/EMS/DAL/EmsContextInitializer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EMS/DAL/EmsContextInitializer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EMS/EMS.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/EMS/EMS.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EMS/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EMS/Program.cs" afterDir="false" />
+=======
+    <list default="true" id="5552a805-bfba-4566-b367-a7d0f48c9f82" name="Changes" comment="Refactor Initializer context">
+      <change afterPath="$PROJECT_DIR$/EMS/Controllers/EmployeeController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EMS/Core/Common/Exception/NotFoundException.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EMS/Core/Contract/DeleteEntityCommand.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EMS/Core/Contract/Employee/Request/CreateEmployeeCommand.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EMS/Core/Contract/Employee/Request/UpdateEmployeeCommand.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EMS/Core/Profiles/EmployeeMappingProfile.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EMS/DAL/Interfaces/IEmployeeService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EMS/DAL/Interfaces/IPositionService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EMS/Migrations/20240113012958_InitialMigration.Designer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EMS/Migrations/20240113012958_InitialMigration.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EMS/Migrations/EmsContextModelSnapshot.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EMS/Services/EmployeeService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EMS/bin/Release/net7.0/publish/web.config" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EMS/obj/Release/net7.0/EMS.GlobalUsings.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EMS/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EMS/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EMS/bin/Debug/net7.0/EMS.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/EMS/bin/Debug/net7.0/EMS.deps.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EMS/bin/Debug/net7.0/EMS.dll" beforeDir="false" afterPath="$PROJECT_DIR$/EMS/bin/Debug/net7.0/EMS.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EMS/bin/Debug/net7.0/EMS.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/EMS/bin/Debug/net7.0/EMS.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EMS/bin/Debug/net7.0/EMS.runtimeconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/EMS/bin/Debug/net7.0/EMS.runtimeconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EMS/bin/Debug/net7.0/EMS.staticwebassets.runtime.json" beforeDir="false" afterPath="$PROJECT_DIR$/EMS/bin/Debug/net7.0/EMS.staticwebassets.runtime.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EMS/obj/Debug/net7.0/EMS.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/EMS/obj/Debug/net7.0/EMS.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EMS/obj/Debug/net7.0/EMS.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/EMS/obj/Debug/net7.0/EMS.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EMS/obj/Debug/net7.0/EMS.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/EMS/obj/Debug/net7.0/EMS.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EMS/obj/Debug/net7.0/EMS.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/EMS/obj/Debug/net7.0/EMS.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EMS/obj/Debug/net7.0/EMS.dll" beforeDir="false" afterPath="$PROJECT_DIR$/EMS/obj/Debug/net7.0/EMS.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EMS/obj/Debug/net7.0/EMS.genruntimeconfig.cache" beforeDir="false" afterPath="$PROJECT_DIR$/EMS/obj/Debug/net7.0/EMS.genruntimeconfig.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EMS/obj/Debug/net7.0/EMS.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/EMS/obj/Debug/net7.0/EMS.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EMS/obj/Debug/net7.0/ref/EMS.dll" beforeDir="false" afterPath="$PROJECT_DIR$/EMS/obj/Debug/net7.0/ref/EMS.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EMS/obj/Debug/net7.0/refint/EMS.dll" beforeDir="false" afterPath="$PROJECT_DIR$/EMS/obj/Debug/net7.0/refint/EMS.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EMS/obj/Debug/net7.0/staticwebassets.build.json" beforeDir="false" afterPath="$PROJECT_DIR$/EMS/obj/Debug/net7.0/staticwebassets.build.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EMS/obj/Debug/net7.0/staticwebassets.development.json" beforeDir="false" afterPath="$PROJECT_DIR$/EMS/obj/Debug/net7.0/staticwebassets.development.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EMS/obj/Debug/net7.0/staticwebassets.pack.json" beforeDir="false" afterPath="$PROJECT_DIR$/EMS/obj/Debug/net7.0/staticwebassets.pack.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EMS/obj/EMS.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/EMS/obj/EMS.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EMS/obj/EMS.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/EMS/obj/EMS.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EMS/obj/EMS.csproj.nuget.g.targets" beforeDir="false" afterPath="$PROJECT_DIR$/EMS/obj/EMS.csproj.nuget.g.targets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EMS/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/EMS/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EMS/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/EMS/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EMS/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/EMS/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EMS/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/EMS/obj/rider.project.restore.info" afterDir="false" />
+>>>>>>> Stashed changes
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +68,7 @@
     <setting file="mock:///Users/dorentinashabani/Desktop/EMS-Ronwell/EMS/EMS/DAL/ConfigureServices.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/EMS/DAL/ConfigureServices.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Users/dorentinashabani/Desktop/EMS-Ronwell/EMS/EMS/DAL/EmsContext.cs" root0="SKIP_HIGHLIGHTING" />
+<<<<<<< Updated upstream
     <setting file="mock:///Users/dorentinashabani/Desktop/EMS-Ronwell/EMS/EMS/DAL/EmsContext.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/dorentinashabani/Desktop/EMS-Ronwell/EMS/EMS/DAL/EmsContext.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/dorentinashabani/Desktop/EMS-Ronwell/EMS/EMS/DAL/EmsContextInitializer.cs" root0="SKIP_HIGHLIGHTING" />
@@ -36,12 +80,19 @@
     <setting file="mock:///Users/dorentinashabani/Desktop/EMS-Ronwell/EMS/EMS/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/dorentinashabani/Desktop/EMS-Ronwell/EMS/EMS/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/dorentinashabani/Desktop/EMS-Ronwell/EMS/EMS/Program.cs" root0="SKIP_HIGHLIGHTING" />
+=======
+    <setting file="mock:///Users/dorentinashabani/Desktop/EMS-Ronwell/EMS/EMS/DAL/EmsContextInitializer.cs" root0="SKIP_HIGHLIGHTING" />
+>>>>>>> Stashed changes
     <setting file="mock:///Users/dorentinashabani/Desktop/EMS-Ronwell/EMS/EMS/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/dorentinashabani/Desktop/EMS-Ronwell/EMS/EMS/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/dorentinashabani/Desktop/EMS-Ronwell/EMS/EMS/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/dorentinashabani/Desktop/EMS-Ronwell/EMS/EMS/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/dorentinashabani/Desktop/EMS-Ronwell/EMS/EMS/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/EMS/obj/Release/net7.0/.NETCoreApp,Version=v7.0.AssemblyAttributes.cs" root0="SKIP_HIGHLIGHTING" />
+<<<<<<< Updated upstream
+=======
+    <setting file="file://$PROJECT_DIR$/EMS/obj/Release/net7.0/EMS.GlobalUsings.g.cs" root0="SKIP_HIGHLIGHTING" />
+>>>>>>> Stashed changes
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f237a55ab16d4649b96170604924f6b94bf450/bd/002d5cc2/DbContext.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/5155ca22acf2c244e86db7d5a4a2c6babf3b7dd1f038f5aea3187367b8611d/CancellationToken.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/6931ac70b9394cc38c5f308c1f41600338a00/_56b40/ConsoleKey.cs" root0="SKIP_HIGHLIGHTING" />
@@ -51,7 +102,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="Toolset" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2apBtRezm44euEOdN05ICg2tODX" />
   <component name="ProjectLevelVcsManager">
@@ -66,10 +117,20 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;RiderNuGetOptionsPageId&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected=".NET Launch Settings Profile.EMS: IIS Express">
+  <component name="RunManager" selected=".NET Launch Settings Profile.EMS: http">
+    <configuration name="Publish EMS to IIS (1)" type="DotNetMsBuildPublish" factoryName="Publish to IIS">
+      <riderPublish configuration="Release" platform="Any CPU" publish_profile="&lt;no publish profile&gt;" uuid_high="-1067869368709462255" uuid_low="-6800611760006994295" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Publish EMS to IIS" type="DotNetMsBuildPublish" factoryName="Publish to IIS">
+      <riderPublish configuration="Release" platform="Any CPU" publish_profile="&lt;no publish profile&gt;" uuid_high="-1067869368709462255" uuid_low="-6800611760006994295" />
+      <method v="2" />
+    </configuration>
     <configuration name="EMS: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/EMS/EMS.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net7.0" />
@@ -127,7 +188,60 @@
       <workItem from="1705005859097" duration="8000" />
       <workItem from="1705005957677" duration="37000" />
       <workItem from="1705006017430" duration="11000" />
+      <workItem from="1705006172307" duration="16174000" />
+      <workItem from="1705103303986" duration="13373000" />
+      <workItem from="1705151419864" duration="12619000" />
     </task>
+    <task id="LOCAL-00001" summary="Initialize projects">
+      <created>1705006257443</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1705006257443</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Add Entities for Employee, Position and Audit entities">
+      <created>1705152678651</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1705152678651</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Add Context and datasets for each entity">
+      <created>1705176250074</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1705176250074</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Add position type enum. Add Database Context initializer and seed methods for each entity.">
+      <created>1705176377403</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1705176377403</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Configure default connection string inside appsettings file">
+      <created>1705176535610</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1705176535610</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Rename to proper name initialize.Add service AddInfrastructureServices method to start point.">
+      <created>1705178527712</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1705178527712</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Refactor Initializer context">
+      <created>1705189162828</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1705189162828</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -148,5 +262,17 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="Initialize projects" />
+    <MESSAGE value="Add Entities for Employee, Position and Audit entities" />
+    <MESSAGE value="Add Context and datasets for each entity" />
+    <MESSAGE value="Add position type enum. Add Database Context initializer and seed methods for each entity." />
+    <MESSAGE value="Configure default connection string inside appsettings file" />
+    <MESSAGE value="Rename to proper name initialize.Add service AddInfrastructureServices method to start point." />
+    <MESSAGE value="Refactor Initializer context" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor Initializer context" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
