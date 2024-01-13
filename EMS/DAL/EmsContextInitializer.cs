@@ -81,7 +81,7 @@ public class EmsContextInitializer
             }
         };
        
-        _context.Employes.AddRange(employees);
+        _context.Employees.AddRange(employees);
 
         _ = await _context.SaveChangesAsync();
     }
