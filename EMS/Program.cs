@@ -1,16 +1,20 @@
+using EMS.DAL;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddInfrastructureServices(builder.Configuration);
 
 var app = builder.Build();
 
 //Initialize and seed database
 using (var scope = app.Services.CreateScope())
 {
-    var initialiser = scope.ServiceProvider.GetRequiredService<EmsContextInitializer>();
-    await initialiser.InitialiseAsync();
-    await initialiser.TrySeedAsync();
+    var initializer = scope.ServiceProvider.GetRequiredService<EmsContextInitializer>();
+    await initializer.InitialiseAsync();
+    await initializer.TrySeedAsync();
 }
 
 // Configure the HTTP request pipeline.
