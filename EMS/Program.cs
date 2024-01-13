@@ -5,6 +5,14 @@ builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
 
+//Initialize and seed database
+using (var scope = app.Services.CreateScope())
+{
+    var initialiser = scope.ServiceProvider.GetRequiredService<EmsContextInitializer>();
+    await initialiser.InitialiseAsync();
+    await initialiser.TrySeedAsync();
+}
+
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
