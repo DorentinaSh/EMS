@@ -6,6 +6,6 @@ namespace EMS.Interfaces;
 public interface IEmsContext
 {
      Task<int> SaveChangesAsync(CancellationToken cancellationToken);
-     DbSet<Employee> Employees { get; }
+     DbSet<Employee> Employes { get; }
      DbSet<Position> Positions { get; }
 }

@@ -22,6 +22,6 @@ public class EmsContext : DbContext, IEmsContext
         return await base.SaveChangesAsync(cancellationToken);
     }
     
-    public DbSet<Employee> Employees => Set<Employee>();
+    public DbSet<Employee> Employes => Set<Employee>();
     public DbSet<Position> Positions => Set<Position>();
 }
