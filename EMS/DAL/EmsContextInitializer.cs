@@ -34,7 +34,6 @@ public class EmsContextInitializer
         try
         {
             await SeedPositions();
-            await SeedEmployees();
         }
         catch (Exception e)
         {
@@ -60,29 +59,6 @@ public class EmsContextInitializer
                 _context.Positions.Add(position);
             }
         });
-
-        _ = await _context.SaveChangesAsync();
-    }
-    
-    private async Task SeedEmployees()
-    {
-        var position = _context.Positions.FirstOrDefault();
-        var employees = new List<Employee>
-        {
-            new Employee
-            {
-                CreatedAt = DateTime.Now,
-                CreatedByUserName = "Admin",
-                UpdatedAt = DateTime.Now,
-                UpdatedByUserName = "Admin",
-                Name = "Dorentina",
-                Lastname = "Shabani",
-                Salary = 100,
-                PositionId = position.Id,
-            }
-        };
-       
-        _context.Employes.AddRange(employees);
 
         _ = await _context.SaveChangesAsync();
     }
