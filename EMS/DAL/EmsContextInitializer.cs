@@ -1,3 +1,4 @@
+using EMS.Core.Enums;
 using EMS.Entities;
 using Microsoft.EntityFrameworkCore;
 
@@ -46,10 +47,10 @@ public class EmsContextInitializer
     {
         var positions = new List<Position>
         {
-            new (Enum.GetName(typeof(Position), 0), "FEDEV"),
-            new (Enum.GetName(typeof(Position), 1), "BEDEV"),
-            new (Enum.GetName(typeof(Position), 2), "FSDEV"),
-            new (Enum.GetName(typeof(Position), 3), "DBDEV"),
+            new (Enum.GetName(typeof(PositionType), 0), "FEDEV"),
+            new (Enum.GetName(typeof(PositionType), 1), "BEDEV"),
+            new (Enum.GetName(typeof(PositionType), 2), "FSDEV"),
+            new (Enum.GetName(typeof(PositionType), 3), "DBDEV"),
         };
         
         positions.ForEach(position =>
@@ -81,7 +82,7 @@ public class EmsContextInitializer
             }
         };
        
-        _context.Employees.AddRange(employees);
+        _context.Employes.AddRange(employees);
 
         _ = await _context.SaveChangesAsync();
     }
