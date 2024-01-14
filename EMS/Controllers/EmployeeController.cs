@@ -55,9 +55,9 @@ public class EmployeeController : Controller
         return Ok(await _employeeService.UpdateEmployee(updateEmployeeCommand, cancellationToken));
     }
 
-    [HttpPut("{id}")]
-    public async Task<ActionResult<bool>> Delete(Guid id, DeleteEntityCommand deleteEntityCommand, CancellationToken cancellationToken)
+    [HttpPost("{id}")]
+    public async Task Delete(Guid id, [FromForm] DeleteEntityCommand deleteEntityCommand, CancellationToken cancellationToken)
     {
-        return Ok(await _employeeService.DeleteEmployee(id, deleteEntityCommand, cancellationToken));
+        await _employeeService.DeleteEmployee(id, deleteEntityCommand, cancellationToken);
     }
 }

@@ -12,7 +12,7 @@ namespace EMS.Services;
 public class EmployeeService : IEmployeeService
 {
     private readonly IEmsContext _emsContext;
-    private readonly IMapper _mapper; 
+    private readonly IMapper _mapper;
 
     public EmployeeService(IEmsContext emsContext, IMapper mapper)
     {
@@ -25,8 +25,9 @@ public class EmployeeService : IEmployeeService
         var employeesList = await _emsContext.Employes
             .AsNoTracking()
             .Include(x => x.Position)
+            .Where(x => x.DeletedAt == null)
             .OrderByDescending(x => x.CreatedAt)
-            .Select(x=> _mapper.Map<EmployeeDTO>(x))
+            .Select(x => _mapper.Map<EmployeeDTO>(x))
             .ToListAsync(cancellationToken);
 
         return employeesList;
@@ -34,8 +35,8 @@ public class EmployeeService : IEmployeeService
 
     public async Task<EmployeeDTO> GetEmployeeById(Guid employeeId, CancellationToken cancellationToken)
     {
-        var employee = await _emsContext.Employes.Include(x=>x.Position).FirstOrDefaultAsync(x => x.Id == employeeId, cancellationToken)
-            ?? throw  new NotFoundException(nameof(Employee));
+        var employee = await _emsContext.Employes.Include(x => x.Position).FirstOrDefaultAsync(x => x.Id == employeeId, cancellationToken)
+            ?? throw new NotFoundException(nameof(Employee));
 
         var employeeDto = _mapper.Map<EmployeeDTO>(employee);
 
@@ -45,7 +46,7 @@ public class EmployeeService : IEmployeeService
     public async Task<Guid> CreateEmployee(CreateEmployeeCommand createEmployeeCommand, CancellationToken cancellationToken)
     {
         var employee = _mapper.Map<Employee>(createEmployeeCommand);
-        
+
         try
         {
             _ = await _emsContext.Employes.AddAsync(employee, cancellationToken);
@@ -72,7 +73,7 @@ public class EmployeeService : IEmployeeService
         {
             _ = _emsContext.Employes.Update(existingEmployee);
             await _emsContext.SaveChangesAsync(cancellationToken);
-            
+
             return true;
         }
         catch (Exception e)
@@ -84,10 +85,10 @@ public class EmployeeService : IEmployeeService
 
     public async Task<bool> DeleteEmployee(Guid employeeId, DeleteEntityCommand deleteEntityCommand, CancellationToken cancellationToken)
     {
-        var employee = 
-            await _emsContext.Employes.FirstOrDefaultAsync(x => x.Id == employeeId, cancellationToken) 
+        var employee =
+            await _emsContext.Employes.FirstOrDefaultAsync(x => x.Id == employeeId, cancellationToken)
             ?? throw new NotFoundException(nameof(Employee));
-        
+
         employee.DeletedAt = DateTime.Now;
         // TODO: Implement currentuser service to get the logged in user.
         employee.DeletedByUserName = "Dorentina";
@@ -97,7 +98,7 @@ public class EmployeeService : IEmployeeService
         {
             _ = _emsContext.Employes.Update(employee);
             await _emsContext.SaveChangesAsync(cancellationToken);
-            
+
             return true;
         }
         catch (Exception e)
