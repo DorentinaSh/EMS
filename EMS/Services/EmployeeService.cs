@@ -5,6 +5,7 @@ using EMS.Core.Contract;
 using EMS.Core.Common.Exception;
 using Microsoft.EntityFrameworkCore;
 using EMS.Core.Contract.Employee.Request;
+using EMS.Core.Contract.DTOs;
 
 namespace EMS.Services;
 
@@ -19,23 +20,26 @@ public class EmployeeService : IEmployeeService
         _mapper = mapper;
     }
 
-    public async Task<List<Employee>> GetEmployees(CancellationToken cancellationToken)
+    public async Task<List<EmployeeDTO>> GetEmployees(CancellationToken cancellationToken)
     {
         var employeesList = await _emsContext.Employes
             .AsNoTracking()
             .Include(x => x.Position)
             .OrderByDescending(x => x.CreatedAt)
+            .Select(x=> _mapper.Map<EmployeeDTO>(x))
             .ToListAsync(cancellationToken);
 
         return employeesList;
     }
 
-    public async Task<Employee> GetEmployeeById(Guid employeeId, CancellationToken cancellationToken)
+    public async Task<EmployeeDTO> GetEmployeeById(Guid employeeId, CancellationToken cancellationToken)
     {
-        var employee = await _emsContext.Employes.FirstOrDefaultAsync(x => x.Id == employeeId, cancellationToken)
+        var employee = await _emsContext.Employes.Include(x=>x.Position).FirstOrDefaultAsync(x => x.Id == employeeId, cancellationToken)
             ?? throw  new NotFoundException(nameof(Employee));
 
-        return employee;
+        var employeeDto = _mapper.Map<EmployeeDTO>(employee);
+
+        return employeeDto;
     }
 
     public async Task<Guid> CreateEmployee(CreateEmployeeCommand createEmployeeCommand, CancellationToken cancellationToken)
