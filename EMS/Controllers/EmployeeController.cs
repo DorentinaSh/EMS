@@ -1,6 +1,7 @@
 using EMS.Interfaces;
 using EMS.Core.Contract;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using EMS.Core.Contract.Employee.Request;
 
 namespace EMS.Controllers;
@@ -10,14 +11,16 @@ namespace EMS.Controllers;
 public class EmployeeController : Controller
 {
     private readonly IEmployeeService _employeeService;
+    private readonly IPositionService _positionService;
 
-    public EmployeeController(IEmployeeService employeeService)
+    public EmployeeController(IEmployeeService employeeService, IPositionService positionService)
     {
         _employeeService = employeeService;
+        _positionService = positionService;
     }
 
     [HttpGet]
-    public async Task<IActionResult> EmployeeList(CancellationToken cancellationToken)
+    public async Task<IActionResult> Index(CancellationToken cancellationToken)
     {
         return View(await _employeeService.GetEmployees(cancellationToken));
     }
@@ -27,11 +30,23 @@ public class EmployeeController : Controller
     {
         return View(await _employeeService.GetEmployeeById(id, cancellationToken));
     }
-    
-    [HttpPost]
-    public async Task<ActionResult<Guid>> Create(CreateEmployeeCommand createEmployeeCommand, CancellationToken cancellationToken)
+
+    [HttpGet]
+    public async Task<ActionResult> Create(CancellationToken cancellationToken)
     {
-        return Ok(await _employeeService.CreateEmployee(createEmployeeCommand, cancellationToken));
+        var positions = await _positionService.GetPositions(cancellationToken);
+        var mappedPositions = positions.Select(x => new SelectListItem { Text = x.Name, Value = x.Id.ToString() }).ToList();
+        ViewData["Positions"] = mappedPositions;
+
+        return View();
+    }
+
+    [HttpPost]
+    public async Task<ActionResult> Create([FromForm] CreateEmployeeCommand createEmployeeCommand, CancellationToken cancellationToken)
+    {
+        await _employeeService.CreateEmployee(createEmployeeCommand, cancellationToken);
+
+        return RedirectToAction("Index");
     }
 
     [HttpPut]
@@ -39,7 +54,7 @@ public class EmployeeController : Controller
     {
         return Ok(await _employeeService.UpdateEmployee(updateEmployeeCommand, cancellationToken));
     }
-    
+
     [HttpPut("{id}")]
     public async Task<ActionResult<bool>> Delete(Guid id, DeleteEntityCommand deleteEntityCommand, CancellationToken cancellationToken)
     {

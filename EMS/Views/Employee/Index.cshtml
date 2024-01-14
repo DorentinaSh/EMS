@@ -6,9 +6,10 @@
 
 <h1>Employee List</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+<button type="button" class="close my-4" data-dismiss="modal" aria-label="Close" onclick="openCreate();">
+    <span aria-hidden="true">Create New</span>
+</button>
+
 <table class="table">
     <thead>
         <tr>
@@ -45,7 +46,7 @@
                 </td>
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a onclick="openModal('@item.Id');">Details</a> |
+                    <a class="text-green" onclick="openDetails('@item.Id');">Details</a> |
                     <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
                 </td>
             </tr>
@@ -75,7 +76,7 @@
             $('#employeeModal').modal('hide');
         };
 
-        function openModal(employeeId) {
+        function openDetails(employeeId) {
             $.ajax({
                 url: '/api/Employee/Get/' + employeeId,
                 type: 'GET',
@@ -84,6 +85,21 @@
                     $('#employeeModal').modal('show');
                 },
                 error: function () {
+                    alert('Error occurred while fetching data.');
+                }
+            });
+        }
+
+        function openCreate() {
+            $.ajax({
+                url: '/api/Employee/Create',
+                type: 'GET',
+                success: function (data) {
+                    $('#modalBody').html(data);
+                    $('#employeeModal').modal('show');
+                },
+                error: function (error) {
+                    console.log(error);
                     alert('Error occurred while fetching data.');
                 }
             });
