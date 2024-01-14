@@ -17,17 +17,17 @@ public class EmployeeController : Controller
     }
 
     [HttpGet]
-    public async Task<IActionResult> GetAll(CancellationToken cancellationToken)
+    public async Task<IActionResult> EmployeeList(CancellationToken cancellationToken)
     {
-        return Ok(await _employeeService.GetEmployees(cancellationToken));
+        return View(await _employeeService.GetEmployees(cancellationToken));
     }
 
     [HttpGet("{id}")]
     public async Task<IActionResult> Get(Guid id, CancellationToken cancellationToken)
     {
-        return Ok(await _employeeService.GetEmployeeById(id, cancellationToken));
+        return View(await _employeeService.GetEmployeeById(id, cancellationToken));
     }
-
+    
     [HttpPost]
     public async Task<ActionResult<Guid>> Create(CreateEmployeeCommand createEmployeeCommand, CancellationToken cancellationToken)
     {
