@@ -4,6 +4,5 @@ namespace EMS.Interfaces;
 
 public interface IPositionService
 {
-    Task<List<Position>> GetPositions();
-    Task<Position> GetPositionById(Guid positionId);
+    Task<List<Position>> GetPositions(CancellationToken cancellationToken);
 }
