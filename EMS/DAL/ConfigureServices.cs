@@ -15,6 +15,7 @@ public static class ConfigureServices
             options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
 
         services.AddTransient<IEmployeeService, EmployeeService>();
+        services.AddTransient<IPositionService, PositionService>();
 
         services.AddScoped<IEmsContext>(provider => provider.GetRequiredService<EmsContext>());
         services.AddScoped<EmsContextInitializer>();
