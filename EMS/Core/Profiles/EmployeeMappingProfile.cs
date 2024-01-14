@@ -12,5 +12,6 @@ public class EmployeeMappingProfile : Profile
         CreateMap<CreateEmployeeCommand, Employee>();
         CreateMap<UpdateEmployeeCommand, Employee>();
         CreateMap<Employee, EmployeeDTO>();
+        CreateMap<EmployeeDTO, UpdateEmployeeCommand>();
     }
 }

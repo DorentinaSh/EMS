@@ -1,16 +1,17 @@
-﻿@model EMS.Core.Contract.Employee.Request.CreateEmployeeCommand
+﻿@model EMS.Core.Contract.Employee.Request.UpdateEmployeeCommand
 @{
     Layout = null;
 }
 @{
     var positions = (List<SelectListItem>)ViewData["Positions"]; // Cast the list
 }
-<h4>Create Employee</h4>
+<h4>Update Employee</h4>
 <hr />
 <div class="row">
     <div class="col-md-8">
-        <form asp-action="Create" asp-controller="Employee">
+        <form asp-action="Update" asp-controller="Employee">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
             <div class="form-group">
                 <label asp-for="Name" class="control-label"></label>
                 <input asp-for="Name" class="form-control" />
@@ -31,14 +32,12 @@
                 <select asp-for="PositionId" class="form-control" asp-items="positions"></select>
             </div>
             <div class="form-group mt-2">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Save" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 @section Scripts {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

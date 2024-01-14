@@ -45,9 +45,9 @@
                     @Html.DisplayFor(modelItem => item.Position.Name)
                 </td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a class="text-green" onclick="openEdit('@item.Id');">Edit</a> |
                     <a class="text-green" onclick="openDetails('@item.Id');">Details</a> |
-                    <a class="text-green" onclick="onDelete('@item.Id');">Delete</a> |
+                    <a class="text-green" onclick="onDelete('@item.Id');">Delete</a>
                 </td>
             </tr>
         }
@@ -99,7 +99,20 @@
                     $('#employeeModal').modal('show');
                 },
                 error: function (error) {
-                    console.log(error);
+                    alert('Error occurred while fetching data.');
+                }
+            });
+        }
+
+        function openEdit(employeeId) {
+            $.ajax({
+                url: '/api/Employee/Update/' + employeeId,
+                type: 'GET',
+                success: function (data) {
+                    $('#modalBody').html(data);
+                    $('#employeeModal').modal('show');
+                },
+                error: function (error) {
                     alert('Error occurred while fetching data.');
                 }
             });
