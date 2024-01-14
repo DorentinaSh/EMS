@@ -87,8 +87,8 @@ public class EmployeeService : IEmployeeService
         employee.DeletedAt = DateTime.Now;
         // TODO: Implement currentuser service to get the logged in user.
         employee.DeletedByUserName = "Dorentina";
-        //employee.DeletedReason = deleteEntityCommand.DeletedReason;
-        
+        employee.DeletedReason = deleteEntityCommand.DeletedReason;
+
         try
         {
             _ = _emsContext.Employes.Update(employee);
